@@ -23,7 +23,7 @@ void setup() {
 
 void draw() {  
   //start GOL
-  int w = 25;
+  int w = 100;
   int columns = (width/w);
   int rows = (height/w);
   color alive = color(0, 0, 0, 170);
