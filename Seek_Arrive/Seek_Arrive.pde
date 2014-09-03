@@ -31,17 +31,12 @@ void draw() {
   rectMode(CORNER);
   rect(test[0], test[1], test[2], test[3]);
   
-  //
-  String message1 = test2[0] + ";"+test2[1] + ";"+test2[2] + ";"+test2[3];
-  String message2 = test[0] + ";"+test[1] + ";"+test[2] + ";"+test[3];
+  String message2 = test2[0] + ";"+ test2[1] + ";"+ test2[2] + ";"+ test2[3]+ ";"+ test[0] + ";"+test[1] + ";"+test[2] + ";"+test[3];
   //String message2  = mx + ";" + my + ";" + test[2];
   String ip       = "127.0.0.1";	// the remote IP address
   int port        = 7001;		// the destination port
   println(message1);
   println(message2);
-  udps.send( message1, ip, port );
-  delay(500);
-  udps.send( message2, ip, port );
-  
+  udps.send(message2, ip, port );
 }
 
