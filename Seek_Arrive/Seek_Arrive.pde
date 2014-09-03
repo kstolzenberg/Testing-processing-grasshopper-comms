@@ -1,17 +1,9 @@
-
 import hypermedia.net.*;
 UDP udpr;  // define the UDP object;
 UDP udps;  // define the UDP object;
 String message2;
 String message1;
-float mx=0.0;
-float my=0.0;
 
-void delay(int delay)
-{
-  int time = millis();
-  while(millis() - time <= delay);
-}
 
 void setup() {
   size(100,100);
@@ -22,18 +14,25 @@ void setup() {
   udps = new UDP( this, 6999);
 }
 
-void draw() {
-  mx = random(3);
-  my = random(6);
-  
+void draw() {  
   float [] test = {random(20),random(20),random(20),random(20)}; 
   float [] test2 = {random(20),random(20),random(20),random(20)}; 
   float [] test3 = {random(20),random(20),random(20),random(20)}; 
   rectMode(CORNER);
   rect(test[0], test[1], test[2], test[3]);
   
-  String message2 = test3[0] + ";"+ test3[1] + ";"+ test3[2] + ";"+ test3[3]+";"+test2[0] + ";"+ test2[1] + ";"+ test2[2] + ";"+ test2[3]+ ";"+ test[0] + ";"+test[1] + ";"+test[2] + ";"+test[3];
-  //String message2  = mx + ";" + my + ";" + test[2];
+  //in game of life, store rectangles in an 2D array/list of arrays for each shape
+  //write a for loop that pulls from an array to a string message to send to GH.
+
+  
+  /*for (int i= 0; i<test3.length; i++){
+    String message 1 = join();
+    //String message1 = str(test[i]); 
+    println(message1);
+  }*/
+  
+  //how to make this more compact?
+  String message2 = join(nf(test,0,0),";") + ";" +join(nf(test2,0,0),";")+";"+join(nf(test3,0,0),";");
   String ip       = "127.0.0.1";	// the remote IP address
   int port        = 7001;		// the destination port
   println(message2);
