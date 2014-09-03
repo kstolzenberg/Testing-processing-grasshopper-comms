@@ -28,14 +28,14 @@ void draw() {
   
   float [] test = {random(20),random(20),random(20),random(20)}; 
   float [] test2 = {random(20),random(20),random(20),random(20)}; 
+  float [] test3 = {random(20),random(20),random(20),random(20)}; 
   rectMode(CORNER);
   rect(test[0], test[1], test[2], test[3]);
   
-  String message2 = test2[0] + ";"+ test2[1] + ";"+ test2[2] + ";"+ test2[3]+ ";"+ test[0] + ";"+test[1] + ";"+test[2] + ";"+test[3];
+  String message2 = test3[0] + ";"+ test3[1] + ";"+ test3[2] + ";"+ test3[3]+";"+test2[0] + ";"+ test2[1] + ";"+ test2[2] + ";"+ test2[3]+ ";"+ test[0] + ";"+test[1] + ";"+test[2] + ";"+test[3];
   //String message2  = mx + ";" + my + ";" + test[2];
   String ip       = "127.0.0.1";	// the remote IP address
   int port        = 7001;		// the destination port
-  println(message1);
   println(message2);
   udps.send(message2, ip, port );
 }
