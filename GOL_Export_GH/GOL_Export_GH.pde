@@ -15,7 +15,7 @@ void print2DArray(int [][] arrayName){
 
 void setup() {
   //size of site approximately, with feet output
-  size(300,620);
+  size(320,575);
   background(255);
   noLoop();
   udpr = new UDP( this, 7000);
@@ -24,7 +24,7 @@ void setup() {
 
 void draw() {  
   //start GOL
-  int w = 60;
+  int w = 40;
   int columns = (width/w);
   int rows = (height/w);
   color alive = color(0, 0, 0, 170);
